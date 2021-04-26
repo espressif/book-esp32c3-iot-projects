@@ -1,0 +1,211 @@
+apply plugin: 'com.android.application'
+apply plugin: 'com.google.protobuf'
+apply plugin: 'com.google.gms.google-services'
+apply plugin: 'com.google.firebase.crashlytics'
+
+def getGitHash = { ->
+    def stdout = new ByteArrayOutputStream()
+    exec {
+        commandLine 'git', 'rev-parse', '--short', 'HEAD'
+        standardOutput = stdout
+    }
+    return stdout.toString().trim()
+}
+
+def defaultAppName = "ESP RainMaker"
+def defaultTransport = "Both"
+def defaultSecurity = "Sec1"
+def defaultPoP = ""
+def defaultPrefix = "PROV_"
+def defaultWiFiScanSrc = "Device"
+
+def defaultClientId = "60i6kac5f9rjuetqnq5mnmaqv6"
+
+def defaultBaseUrl = "https://api.rainmaker.espressif.com"
+def defaultClaimBaseUrl = "https://esp-claiming.rainmaker.espressif.com"
+
+def defaultAuthUrl = "https://auth.rainmaker.espressif.com/oauth2"
+def defaultRedirectUri = "rainmaker://com.espressif.rainmaker/success"
+def gitHubIdentityProvider = "GitHub"
+def googleIdentityProvider = "Google"
+
+def defaultDocUrl = "https://rainmaker.espressif.com/"
+def defaultPrivacyUrl = "https://rainmaker.espressif.com/docs/privacy-policy.html"
+def defaultTermsOfUseUrl = "https://rainmaker.espressif.com/docs/terms-of-use.html"
+
+def localProperties = new Properties()
+localProperties.load(new FileInputStream(rootProject.file("local.properties")))
+
+android {
+
+    compileSdkVersion 30
+
+    defaultConfig {
+        applicationId "com.espressif.rainmaker"
+        minSdkVersion 23
+        targetSdkVersion 30
+        versionCode 50
+        versionName "2.5.0 - ${getGitHash()}"
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+
+        buildConfigField "String", "GitHash", "\"${getGitHash()}\""
+
+        resValue "string", "app_name", localProperties.getProperty("appName", defaultAppName)
+        buildConfigField "String", "POP", '"' + localProperties.getProperty("POP", defaultPoP) + '"'
+
+        def transport = localProperties.getProperty("transport", defaultTransport)
+        if (transport == null) {
+            throw new GradleException("Transport not found. Define transport in the local.properties file.")
+        } else if (!transport.equalsIgnoreCase("SoftAP") && !transport.equalsIgnoreCase("BLE") && !transport.equalsIgnoreCase("Both")) {
+            throw new GradleException("Invalid 'transport' value. Please check 'transport' value in local.properties file.")
+        } else {
+            buildConfigField "String", "TRANSPORT", '"' + transport + '"'
+        }
+
+        def security = localProperties.getProperty("security", defaultSecurity)
+        if (security == null) {
+            throw new GradleException("Security not found. Define security in the local.properties file.")
+        } else if (!security.equalsIgnoreCase("Sec0") && !security.equalsIgnoreCase("Sec1")) {
+            throw new GradleException("Invalid 'security' value. Please check 'security' value in local.properties file.")
+        } else {
+            buildConfigField "String", "SECURITY", '"' + security + '"'
+        }
+
+        def wifiScanSrc = localProperties.getProperty("wifiScanSource", defaultWiFiScanSrc)
+        if (wifiScanSrc == null) {
+            throw new GradleException("WiFi scan source not found. Define it in the local.properties file.")
+        } else if (!wifiScanSrc.equalsIgnoreCase("Device") && !wifiScanSrc.equalsIgnoreCase("Phone")) {
+            throw new GradleException("Invalid 'wifiScanSource' value. Please check 'wifiScanSource' value in local.properties file.")
+        } else {
+            buildConfigField "String", "WIFI_SCAN_SRC", '"' + wifiScanSrc + '"'
+        }
+
+        buildConfigField "boolean", "isFilterPrefixEditable", localProperties.getProperty("isFilterPrefixEditable", "true")
+        buildConfigField "String", "DEVICE_NAME_PREFIX", '"' + localProperties.getProperty("deviceNamePrefix", defaultPrefix) + '"'
+
+        buildConfigField "boolean", "isQRCodeSupported", localProperties.getProperty("isQRCodeSupported", "true")
+        buildConfigField "boolean", "isScheduleSupported", localProperties.getProperty("isScheduleSupported", "true")
+        buildConfigField "boolean", "isSceneSupported", localProperties.getProperty("isSceneSupported", "true")
+        buildConfigField "boolean", "isLocalControlSupported", localProperties.getProperty("isLocalControlSupported", "true")
+        buildConfigField "boolean", "isNodeGroupingSupported", localProperties.getProperty("isNodeGroupingSupported", "true")
+        buildConfigField "boolean", "isNodeSharingSupported", localProperties.getProperty("isNodeSharingSupported", "true")
+
+        def clientId = localProperties.getProperty("clientId", defaultClientId)
+        def authUrl = localProperties.getProperty("authUrl", defaultAuthUrl)
+        def redirectUri = localProperties.getProperty("redirectUri", defaultRedirectUri)
+
+        buildConfigField "String", "CLIENT_ID", '"' + clientId + '"'
+
+        buildConfigField "String", "BASE_URL", '"' + localProperties.getProperty("baseUrl", defaultBaseUrl) + '"'
+        buildConfigField "String", "CLAIM_BASE_URL", '"' + localProperties.getProperty("claimBaseUrl", defaultClaimBaseUrl) + '"'
+
+        buildConfigField "String", "AUTH_URL", '"' + authUrl + '"'
+        buildConfigField "String", "TOKEN_URL", '"' + authUrl + "/token" + '"'
+        buildConfigField "String", "REDIRECT_URI", '"' + redirectUri + '"'
+
+        def gitHubUrl = authUrl + "/authorize?identity_provider=" + gitHubIdentityProvider +
+                "&redirect_uri=" + redirectUri + "&response_type=CODE&client_id=" + clientId
+        def googleUrl = authUrl + "/authorize?identity_provider=" + googleIdentityProvider +
+                "&redirect_uri=" + redirectUri + "&response_type=CODE&client_id=" + clientId
+
+        buildConfigField "String", "GITHUB_URL", '"' + gitHubUrl + '"'
+        buildConfigField "String", "GOOGLE_URL", '"' + googleUrl + '"'
+
+        buildConfigField "String", "DOCUMENTATION_URL", '"' + localProperties.getProperty("docUrl", defaultDocUrl) + '"'
+        buildConfigField "String", "PRIVACY_URL", '"' + localProperties.getProperty("privacyUrl", defaultPrivacyUrl) + '"'
+        buildConfigField "String", "TERMS_URL", '"' + localProperties.getProperty("termsOfUseUrl", defaultTermsOfUseUrl) + '"'
+
+        // Alexa App Linking Configurations
+        buildConfigField "String", "ALEXA_CLIENT_ID", '"' + localProperties.getProperty("alexaClientId") + '"'
+        buildConfigField "String", "ALEXA_CLIENT_SECRET", '"' + localProperties.getProperty("alexaClientSecret") + '"'
+        buildConfigField "String", "ALEXA_REDIRECT_URL", '"' + localProperties.getProperty("alexaRedirectUrl") + '"'
+        buildConfigField "String", "ALEXA_RM_CLIENT_ID", '"' + localProperties.getProperty("alexaRMClientId") + '"'
+        buildConfigField "String", "SKILL_ID", '"' + localProperties.getProperty("skillId") + '"'
+        buildConfigField "String", "SKILL_STAGE", '"' + localProperties.getProperty("skillStage") + '"'
+        buildConfigField "String", "ALEXA_ACCESS_TOKEN_URL", '"' + localProperties.getProperty("alexaAccessTokenUrl") + '"'
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            debuggable false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+
+        debug {
+            debuggable true
+        }
+    }
+
+    buildToolsVersion '29.0.3'
+
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+}
+
+protobuf {
+    protoc {
+        artifact = 'com.google.protobuf:protoc:3.8.0'
+    }
+    generateProtoTasks {
+        all().each { task ->
+            task.builtins {
+                java {
+                    option 'lite'
+                }
+            }
+        }
+    }
+}
+
+dependencies {
+
+    implementation fileTree(include: ['*.jar'], dir: 'libs')
+    implementation 'androidx.appcompat:appcompat:1.3.1'
+    implementation 'androidx.constraintlayout:constraintlayout:2.1.0'
+    implementation 'com.google.android.material:material:1.1.0'
+    implementation 'androidx.recyclerview:recyclerview:1.2.1'
+    implementation 'androidx.swiperefreshlayout:swiperefreshlayout:1.1.0'
+    implementation "androidx.browser:browser:1.3.0"
+
+    implementation 'com.google.protobuf:protobuf-javalite:3.14.0'
+    implementation 'com.google.crypto.tink:tink-android:1.6.1'
+
+    implementation 'org.greenrobot:eventbus:3.2.0'
+    implementation 'com.auth0.android:jwtdecode:1.4.0'
+    implementation 'com.google.code.gson:gson:2.8.6'
+    implementation 'com.squareup.retrofit2:retrofit:2.6.0'
+    implementation 'com.squareup.retrofit2:converter-gson:2.6.0'
+    implementation 'com.squareup.retrofit2:adapter-rxjava2:2.5.0'
+    implementation 'io.reactivex.rxjava2:rxandroid:2.1.1'
+    implementation 'com.squareup.okhttp3:logging-interceptor:4.9.0'
+
+    implementation 'com.github.firdausmaulan:AVLoadingIndicatorView:2.3.0'
+    implementation 'com.larswerkman:HoloColorPicker:1.5'
+    implementation 'com.aventrix.jnanoid:jnanoid:2.0.0'
+    implementation 'com.github.yuriy-budiyev:code-scanner:2.1.0'
+    implementation 'com.github.espressif:esp-idf-provisioning-android:lib-2.0.11'
+    implementation 'com.github.warkiz.tickseekbar:tickseekbar:0.1.4'
+    implementation 'com.github.abdularis:TapHoldUpButton:0.1.2'
+
+    // Room dependencies
+    def room_version = "2.3.0"
+    implementation "android.arch.persistence.room:runtime:$room_version"
+    annotationProcessor "android.arch.persistence.room:compiler:$room_version"
+
+    def work_version = "2.5.0"
+    implementation "androidx.work:work-runtime:$work_version"
+
+    // Import the BoM for the Firebase platform
+    implementation platform('com.google.firebase:firebase-bom:28.4.0')
+    implementation 'com.google.firebase:firebase-messaging'
+    implementation 'com.google.firebase:firebase-analytics'
+    implementation 'com.google.firebase:firebase-crashlytics'
+    implementation 'com.google.android.gms:play-services-gcm:17.0.0'
+
+    testImplementation 'junit:junit:4.13.2'
+    androidTestImplementation 'androidx.test:runner:1.4.0'
+    androidTestImplementation 'androidx.test.espresso:espresso-core:3.4.0'
+}

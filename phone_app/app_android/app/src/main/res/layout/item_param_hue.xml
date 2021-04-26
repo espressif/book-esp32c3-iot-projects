@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <com.larswerkman.holocolorpicker.ColorPicker
+            android:id="@+id/hue_color_picker"
+            android:layout_width="250dp"
+            android:layout_height="250dp"
+            app:color_center_halo_radius="46dp"
+            app:color_center_radius="40dp"
+            app:color_pointer_halo_radius="12dp"
+            app:color_pointer_radius="9dp"
+            app:color_wheel_radius="150dp"
+            app:color_wheel_thickness="35dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</androidx.coordinatorlayout.widget.CoordinatorLayout>

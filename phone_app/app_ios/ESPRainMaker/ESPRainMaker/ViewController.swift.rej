@@ -1,0 +1,19 @@
+***************
+*** 239,248 ****
+              }
+          })
+      }
+- 
+-     private func generateProductDSN() -> String {
+-         return UUID().uuidString
+-     }
+  }
+  
+  #if BLE
+--- 142,147 ----
+              }
+          })
+      }
+  }
+  
+  #if BLE

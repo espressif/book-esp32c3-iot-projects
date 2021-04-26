@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "847141165224",
+    "firebase_url": "https://esp-rainmaker.firebaseio.com",
+    "project_id": "esp-rainmaker",
+    "storage_bucket": "esp-rainmaker.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:847141165224:android:631c1ad4f87e52e8264a9d",
+        "android_client_info": {
+          "package_name": "com.espressif.rainmaker"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "847141165224-mfdjg1ju1r4t499gpc6bbb20vu35diaq.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyD03vVsPOFIaUc61aJrTpDg5Pd1Y4lIzgI"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "847141165224-mfdjg1ju1r4t499gpc6bbb20vu35diaq.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

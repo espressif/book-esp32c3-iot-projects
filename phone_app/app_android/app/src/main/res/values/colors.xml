@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#8864e4</color>
+    <color name="colorPrimaryDark">#1a1a1a</color>
+    <color name="colorAccent">#8181a8</color>
+    <color name="blue">#0033CC</color>
+    <color name="orange">#FF9900</color>
+    <color name="color_esp_logo">#CA1627</color>
+
+    <color name="toolbar_items">#CBCBCB</color>
+    <color name="text_border_default">#303232</color>
+    <color name="text_border_selected">#4EA9DC</color>
+    <color name="alert">#AC1600</color>
+    <color name="button_default">#329AD6</color>
+    <color name="color_text_on">#4CAF50</color>
+    <color name="color_text_off">#CA1627</color>
+    <color name="color_err_text">#FF3B30</color>
+
+    <!-- New colors -->
+
+    <color name="color_border">#f2f1fc</color>
+    <color name="color_text">#1a1a1a</color>
+    <color name="color_background">#f6f6fb</color>
+    <color name="color_orange">#ff5207</color>
+    <color name="color_text_secondary">#8181a8</color>
+    <color name="color_remove">#ffeee6</color>
+    <color name="color_dark_gray">#555555</color>
+    <color name="color_light_gray">#BBBBBB</color>
+
+</resources>

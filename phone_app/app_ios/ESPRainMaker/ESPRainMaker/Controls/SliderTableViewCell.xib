@@ -1,0 +1,149 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="SliderTableViewCell" rowHeight="115" id="KGk-i7-Jjw" customClass="SliderTableViewCell" customModule="ESP_RainMaker" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="115"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+                <rect key="frame" x="0.0" y="0.0" width="320" height="115"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Xz9-78-Glk">
+                        <rect key="frame" x="15" y="2" width="290" height="115"/>
+                        <subviews>
+                            <slider hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" continuous="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gau-RP-e10" customClass="ThumbTextSlider" customModule="ESP_RainMaker" customModuleProvider="target">
+                                <rect key="frame" x="38" y="50" width="214" height="31"/>
+                                <color key="minimumTrackTintColor" red="0.32549019610000002" green="0.18823529410000001" blue="0.72549019609999998" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="maximumTrackTintColor" red="0.50588235294117645" green="0.50588235294117645" blue="0.6588235294117647" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="thumbTintColor" red="0.32549019610000002" green="0.18823529410000001" blue="0.72549019609999998" alpha="1" colorSpace="calibratedRGB"/>
+                                <connections>
+                                    <action selector="sliderValueChanged:" destination="KGk-i7-Jjw" eventType="valueChanged" id="qIx-IS-CWi"/>
+                                </connections>
+                            </slider>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fv6-kj-hye">
+                                <rect key="frame" x="40" y="85" width="9" height="17"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <color key="textColor" red="0.50588235294117645" green="0.50588235294117645" blue="0.6588235294117647" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jNI-VA-cqz">
+                                <rect key="frame" x="16" y="8" width="35.5" height="17"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <color key="textColor" red="0.10196078431372549" green="0.10196078431372549" blue="0.10196078431372549" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="100" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oTi-8G-sPl">
+                                <rect key="frame" x="226" y="85" width="24" height="17"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <color key="textColor" red="0.50588235294117645" green="0.50588235294117645" blue="0.6588235294117647" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="G14-oz-y4f" customClass="GradientSlider" customModule="ESP_RainMaker" customModuleProvider="target">
+                                <rect key="frame" x="40" y="51" width="210" height="28"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="thickness">
+                                        <real key="value" value="5"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="boolean" keyPath="hasRainbow" value="NO"/>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="hueSliderValueChanged:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="Scq-QM-OhQ"/>
+                                    <action selector="hueSliderValueDragged:" destination="KGk-i7-Jjw" eventType="valueChanged" id="9oe-oK-We8"/>
+                                </connections>
+                            </view>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="brightness_high" translatesAutoresizingMaskIntoConstraints="NO" id="D5T-V4-2AD">
+                                <rect key="frame" x="258" y="53" width="24" height="24"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="24" id="DKI-aX-e25"/>
+                                    <constraint firstAttribute="width" constant="24" id="jPH-Cr-1mV"/>
+                                </constraints>
+                            </imageView>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="brightness_low" translatesAutoresizingMaskIntoConstraints="NO" id="CQH-oj-clK">
+                                <rect key="frame" x="8" y="53" width="24" height="24"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="24" id="8db-4k-1eK"/>
+                                    <constraint firstAttribute="height" constant="24" id="aQZ-zH-Lj5"/>
+                                </constraints>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" red="0.96470588235294119" green="0.96470588235294119" blue="0.98431372549019602" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="fv6-kj-hye" firstAttribute="leading" secondItem="gau-RP-e10" secondAttribute="leading" id="2bg-2G-fSD"/>
+                            <constraint firstItem="G14-oz-y4f" firstAttribute="trailing" secondItem="gau-RP-e10" secondAttribute="trailing" id="7Lc-Y0-Il3"/>
+                            <constraint firstItem="D5T-V4-2AD" firstAttribute="centerY" secondItem="G14-oz-y4f" secondAttribute="centerY" id="Ext-o6-51i"/>
+                            <constraint firstItem="oTi-8G-sPl" firstAttribute="centerY" secondItem="fv6-kj-hye" secondAttribute="centerY" id="HJ5-c8-4JO"/>
+                            <constraint firstItem="G14-oz-y4f" firstAttribute="centerX" secondItem="gau-RP-e10" secondAttribute="centerX" id="N2F-79-5L4"/>
+                            <constraint firstAttribute="trailing" secondItem="D5T-V4-2AD" secondAttribute="trailing" constant="8" id="OLI-co-ixd"/>
+                            <constraint firstItem="jNI-VA-cqz" firstAttribute="leading" secondItem="Xz9-78-Glk" secondAttribute="leading" constant="16" id="QJa-YP-ILo"/>
+                            <constraint firstItem="CQH-oj-clK" firstAttribute="leading" secondItem="Xz9-78-Glk" secondAttribute="leading" constant="8" id="Se1-mH-3Mt"/>
+                            <constraint firstItem="G14-oz-y4f" firstAttribute="centerY" secondItem="gau-RP-e10" secondAttribute="centerY" id="W9o-5Q-e89"/>
+                            <constraint firstItem="G14-oz-y4f" firstAttribute="leading" secondItem="gau-RP-e10" secondAttribute="leading" id="ZW1-c6-zRX"/>
+                            <constraint firstItem="oTi-8G-sPl" firstAttribute="trailing" secondItem="gau-RP-e10" secondAttribute="trailing" id="agX-Rt-ihw"/>
+                            <constraint firstItem="gau-RP-e10" firstAttribute="leading" secondItem="CQH-oj-clK" secondAttribute="trailing" constant="8" id="bRI-Th-dBy"/>
+                            <constraint firstItem="jNI-VA-cqz" firstAttribute="top" secondItem="Xz9-78-Glk" secondAttribute="top" constant="8" id="di1-Nt-YV8"/>
+                            <constraint firstAttribute="bottom" secondItem="gau-RP-e10" secondAttribute="bottom" constant="35" id="gWk-Wk-BGg"/>
+                            <constraint firstItem="D5T-V4-2AD" firstAttribute="centerY" secondItem="CQH-oj-clK" secondAttribute="centerY" id="mwA-tI-rbn"/>
+                            <constraint firstAttribute="bottom" secondItem="fv6-kj-hye" secondAttribute="bottom" constant="13" id="rmC-AG-cei"/>
+                            <constraint firstAttribute="height" constant="115" id="vBm-Nh-mmq"/>
+                            <constraint firstItem="D5T-V4-2AD" firstAttribute="leading" secondItem="gau-RP-e10" secondAttribute="trailing" constant="8" id="y7Q-9v-C5F"/>
+                        </constraints>
+                    </view>
+                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wef-GD-gJS">
+                        <rect key="frame" x="0.0" y="0.0" width="40" height="115"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="40" id="HGm-rc-D80"/>
+                        </constraints>
+                        <state key="normal" image="checkbox_empty"/>
+                        <connections>
+                            <action selector="checkBoxPressed:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="65Y-u2-Wok"/>
+                        </connections>
+                    </button>
+                </subviews>
+                <constraints>
+                    <constraint firstAttribute="bottom" secondItem="wef-GD-gJS" secondAttribute="bottom" id="2CP-vC-CS2"/>
+                    <constraint firstItem="Xz9-78-Glk" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="2" id="5He-qC-Teg"/>
+                    <constraint firstAttribute="trailing" secondItem="Xz9-78-Glk" secondAttribute="trailing" constant="15" id="H5o-9f-a4e"/>
+                    <constraint firstItem="wef-GD-gJS" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" id="MfP-CM-g41"/>
+                    <constraint firstItem="Xz9-78-Glk" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="15" id="hbk-xt-zZq"/>
+                    <constraint firstItem="wef-GD-gJS" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" id="k4C-gH-cVN"/>
+                    <constraint firstAttribute="bottom" secondItem="Xz9-78-Glk" secondAttribute="bottom" constant="-2" id="kdF-2f-ekI"/>
+                </constraints>
+            </tableViewCellContentView>
+            <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
+            <connections>
+                <outlet property="backView" destination="Xz9-78-Glk" id="p3C-HX-ziF"/>
+                <outlet property="checkButton" destination="wef-GD-gJS" id="6Kv-Eu-HNc"/>
+                <outlet property="hueSlider" destination="G14-oz-y4f" id="4WB-Uw-cUg"/>
+                <outlet property="leadingSpaceConstraint" destination="hbk-xt-zZq" id="Jkt-vR-nQs"/>
+                <outlet property="maxImage" destination="D5T-V4-2AD" id="wlj-qs-rQH"/>
+                <outlet property="maxLabel" destination="oTi-8G-sPl" id="Y25-Cy-fwc"/>
+                <outlet property="minImage" destination="CQH-oj-clK" id="cBB-Gz-JJI"/>
+                <outlet property="minLabel" destination="fv6-kj-hye" id="ijG-gk-jOB"/>
+                <outlet property="slider" destination="gau-RP-e10" id="Ktl-Di-6zT"/>
+                <outlet property="title" destination="jNI-VA-cqz" id="LAg-Co-G9z"/>
+                <outlet property="trailingSpaceConstraint" destination="H5o-9f-a4e" id="aYZ-cH-8mk"/>
+            </connections>
+            <point key="canvasLocation" x="47.826086956521742" y="56.584821428571423"/>
+        </tableViewCell>
+    </objects>
+    <designables>
+        <designable name="G14-oz-y4f">
+            <size key="intrinsicContentSize" width="-1" height="28"/>
+        </designable>
+    </designables>
+    <resources>
+        <image name="brightness_high" width="70" height="70"/>
+        <image name="brightness_low" width="70" height="70"/>
+        <image name="checkbox_empty" width="16" height="16"/>
+    </resources>
+</document>

@@ -1,0 +1,323 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.google.android.material.card.MaterialCardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:card_view="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    card_view:cardBackgroundColor="@color/color_background"
+    card_view:cardCornerRadius="8dp"
+    card_view:cardElevation="2dp"
+    card_view:cardUseCompatPadding="true">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <androidx.appcompat.widget.AppCompatCheckBox
+            android:id="@+id/cb_param_select"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentStart="true"
+            android:layout_centerVertical="true"
+            android:layout_marginStart="@dimen/margin_8" />
+
+        <RelativeLayout
+            android:id="@+id/rl_card_slider"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_toRightOf="@id/cb_param_select"
+            android:padding="5dp"
+            android:visibility="visible">
+
+            <TextView
+                android:id="@+id/slider_name"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignParentStart="true"
+                android:layout_marginStart="8dp"
+                android:alpha="0.5"
+                android:text="Brightness"
+                android:textColor="@color/colorPrimaryDark"
+                android:textSize="12sp" />
+
+            <com.warkiz.tickseekbar.TickSeekBar
+                android:id="@+id/card_int_slider"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/slider_name"
+                android:layout_marginBottom="2dp"
+                android:paddingStart="12dp"
+                android:paddingEnd="12dp"
+                android:visibility="visible"
+                app:tsb_progress_value_float="false"
+                app:tsb_seek_smoothly="true"
+                app:tsb_show_thumb_text="above"
+                app:tsb_show_tick_marks_type="oval"
+                app:tsb_show_tick_texts="below"
+                app:tsb_thumb_color="@color/colorPrimary"
+                app:tsb_thumb_size="20dp"
+                app:tsb_thumb_text_color="@color/colorAccent"
+                app:tsb_tick_marks_color="@color/colorAccent"
+                app:tsb_tick_marks_size="10dp"
+                app:tsb_tick_texts_color="@color/colorAccent"
+                app:tsb_tick_texts_size="12sp"
+                app:tsb_ticks_count="2"
+                app:tsb_track_background_color="@color/colorAccent"
+                app:tsb_track_background_size="2dp"
+                app:tsb_track_progress_color="@color/colorPrimary"
+                app:tsb_track_progress_size="3dp" />
+
+            <com.warkiz.tickseekbar.TickSeekBar
+                android:id="@+id/card_float_slider"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/slider_name"
+                android:layout_marginBottom="2dp"
+                android:paddingStart="12dp"
+                android:paddingEnd="12dp"
+                android:visibility="gone"
+                app:tsb_progress_value_float="true"
+                app:tsb_seek_smoothly="true"
+                app:tsb_show_thumb_text="above"
+                app:tsb_show_tick_marks_type="oval"
+                app:tsb_show_tick_texts="below"
+                app:tsb_thumb_color="@color/colorPrimary"
+                app:tsb_thumb_size="20dp"
+                app:tsb_thumb_text_color="@color/colorAccent"
+                app:tsb_tick_marks_color="@color/colorAccent"
+                app:tsb_tick_marks_size="10dp"
+                app:tsb_tick_texts_color="@color/colorAccent"
+                app:tsb_tick_texts_size="12sp"
+                app:tsb_ticks_count="2"
+                app:tsb_track_background_color="@color/colorAccent"
+                app:tsb_track_background_size="2dp"
+                app:tsb_track_progress_color="@color/colorPrimary"
+                app:tsb_track_progress_size="3dp" />
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/rl_card_palette"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_toRightOf="@id/cb_param_select"
+            android:paddingTop="5dp"
+            android:visibility="gone">
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/palette_name"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentStart="true"
+                    android:layout_alignParentTop="true"
+                    android:layout_marginStart="8dp"
+                    android:alpha="0.5"
+                    android:text="Brightness"
+                    android:textColor="@color/colorPrimaryDark"
+                    android:textSize="12sp" />
+
+                <com.espressif.ui.widgets.PaletteBar
+                    android:id="@+id/rl_palette"
+                    android:layout_width="match_parent"
+                    android:layout_height="25pt" />
+            </LinearLayout>
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/rl_card_switch"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_toRightOf="@id/cb_param_select"
+            android:padding="5dp"
+            android:visibility="gone">
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentStart="true"
+                android:layout_centerVertical="true"
+                android:layout_marginStart="8dp"
+                android:layout_toLeftOf="@id/card_switch"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/switch_name"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:alpha="0.5"
+                    android:text="Title"
+                    android:textColor="@color/colorPrimaryDark"
+                    android:textSize="12sp" />
+
+                <TextView
+                    android:id="@+id/tv_switch_status"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="2dp"
+                    android:text="@string/text_on"
+                    android:textColor="@color/colorPrimaryDark"
+                    android:textSize="16sp" />
+
+            </LinearLayout>
+
+            <androidx.appcompat.widget.SwitchCompat
+                android:id="@+id/card_switch"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentEnd="true"
+                android:layout_centerVertical="true"
+                android:paddingEnd="8dp"
+                android:theme="@style/AppTheme.PurpleAccent" />
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/rl_card_trigger"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_toRightOf="@id/cb_param_select"
+            android:padding="5dp"
+            android:visibility="gone">
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentStart="true"
+                android:layout_centerVertical="true"
+                android:layout_marginStart="8dp"
+                android:layout_toLeftOf="@id/btn_trigger"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/tv_trigger_name"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Title"
+                    android:textColor="@color/colorPrimaryDark"
+                    android:textSize="12sp" />
+
+            </LinearLayout>
+
+            <com.aar.tapholdupbutton.TapHoldUpButton
+                android:id="@+id/btn_trigger"
+                android:layout_width="35dp"
+                android:layout_height="35dp"
+                android:layout_alignParentEnd="true"
+                android:layout_centerVertical="true"
+                android:paddingEnd="8dp"
+                app:thub_circleColor="@color/colorPrimary"
+                app:thub_circleColorOhHold="@color/colorAccent"
+                app:thub_circleGap="3dp"
+                app:thub_ringColor="@color/colorPrimary"
+                app:thub_ringStrokeWidth="2dp" />
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/rl_card_label"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_toRightOf="@id/cb_param_select"
+            android:padding="5dp"
+            android:visibility="gone">
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentStart="true"
+                android:layout_centerVertical="true"
+                android:layout_marginStart="8dp"
+                android:layout_toLeftOf="@id/btn_edit"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/tv_label_name"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:alpha="0.5"
+                    android:text="Device Name"
+                    android:textColor="@color/colorPrimaryDark"
+                    android:textSize="12sp" />
+
+                <TextView
+                    android:id="@+id/tv_label_value"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="2dp"
+                    android:text="Smart Light"
+                    android:textColor="@color/colorPrimaryDark"
+                    android:textSize="16sp" />
+
+            </LinearLayout>
+
+            <TextView
+                android:id="@+id/btn_edit"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentEnd="true"
+                android:layout_centerVertical="true"
+                android:layout_marginEnd="8dp"
+                android:padding="8dp"
+                android:text="@string/btn_edit"
+                android:textColor="@color/colorPrimary"
+                android:textSize="12sp"
+                android:visibility="visible" />
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/rl_card_drop_down"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_toRightOf="@id/cb_param_select"
+            android:padding="5dp"
+            android:visibility="gone">
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentStart="true"
+                android:layout_centerVertical="true"
+                android:layout_marginStart="8dp"
+                android:layout_toLeftOf="@id/card_spinner"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/tv_spinner_name"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:alpha="0.5"
+                    android:textColor="@color/colorPrimaryDark"
+                    android:textSize="12sp" />
+
+                <TextView
+                    android:id="@+id/tv_spinner_value"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="2dp"
+                    android:maxLines="2"
+                    android:textColor="@color/colorPrimaryDark"
+                    android:textSize="16sp" />
+
+            </LinearLayout>
+
+            <com.espressif.ui.widgets.EspDropDown
+                android:id="@+id/card_spinner"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentEnd="true"
+                android:layout_centerVertical="true"
+                android:gravity="end"
+                android:paddingEnd="8dp"
+                android:textAlignment="gravity" />
+
+        </RelativeLayout>
+
+    </RelativeLayout>
+
+</com.google.android.material.card.MaterialCardView>

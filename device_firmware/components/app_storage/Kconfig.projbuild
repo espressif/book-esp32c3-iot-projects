@@ -1,0 +1,8 @@
+menu "ESP RainMaker App Storage Configuration"
+
+    config RAINMAKER_APP_PARTITION_NAMESPACE
+        string "RainMaker app-info Partition NVS Namespace"
+        default "app-info"
+        help
+            Store application data
+endmenu

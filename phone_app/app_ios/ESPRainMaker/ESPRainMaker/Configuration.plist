@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>AWS Configuration</key>
+	<dict>
+		<key>App Client ID</key>
+		<string>60i6kac5f9rjuetqnq5mnmaqv6</string>
+		<key>Authentication URL</key>
+		<string>https://auth.rainmaker.espressif.com/oauth2</string>
+		<key>Base URL</key>
+		<string>https://api.rainmaker.espressif.com</string>
+		<key>Redirect URL</key>
+		<string>com.espressif.rainmaker.softap://success</string>
+		<key>Claim URL</key>
+		<string>https://esp-claiming.rainmaker.espressif.com</string>
+	</dict>
+	<key>External Links</key>
+	<dict>
+		<key>Terms of Use</key>
+		<string>https://rainmaker.espressif.com/docs/terms-of-use.html</string>
+		<key>Privacy Policy</key>
+		<string>https://rainmaker.espressif.com/docs/privacy-policy.html</string>
+		<key>Documentation</key>
+		<string>https://rainmaker.espressif.com</string>
+	</dict>
+	<key>App Configuration</key>
+	<dict>
+		<key>Enable Grouping</key>
+		<true/>
+		<key>Enable Schedule</key>
+		<true/>
+		<key>Enable Local Control</key>
+		<true/>
+		<key>Enable Sharing</key>
+		<true/>
+		<key>Enable Scene</key>
+		<true/>
+	</dict>
+	<key>Provision Settings</key>
+	<dict>
+		<key>ESP Transport</key>
+		<string>Both</string>
+		<key>BLE Device Prefix</key>
+		<string>PROV_</string>
+		<key>ESP Allow Prefix Search</key>
+		<true/>
+		<key>ESP Securtiy Mode</key>
+		<string>Secure</string>
+		<key>ESP Scan Enabled</key>
+		<true/>
+	</dict>
+	<key>App Group</key>
+	<string>group.com.espressif.rainmaker.softap</string>
+	<key>App Theme Color</key>
+	<string>#FFFFFF</string>
+	<key>ESP Alexa Configuration</key>
+	<dict>
+		<key>Alexa Client Id</key>
+		<string></string>
+		<key>Alexa Client Secret</key>
+		<string></string>
+		<key>Alexa RM Client Id</key>
+		<string></string>
+		<key>Skill Id</key>
+		<string></string>
+		<key>Skill Stage</key>
+		<string></string>
+		<key>Redirect URL</key>
+		<string></string>
+		<key>Alexa Access Token URL</key>
+		<string></string>
+	</dict>
+</dict>
+</plist>

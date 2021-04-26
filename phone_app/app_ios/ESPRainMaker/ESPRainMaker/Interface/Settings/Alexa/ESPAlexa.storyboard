@@ -1,0 +1,285 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="18122" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina5_5" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="18093"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="AmazonEmberDisplay_Bd.ttf">
+            <string>AmazonEmberDisplay-Bold</string>
+        </array>
+        <array key="AmazonEmberDisplay_He.ttf">
+            <string>AmazonEmberDisplay-Heavy</string>
+        </array>
+        <array key="AmazonEmberDisplay_Rg.ttf">
+            <string>AmazonEmberDisplay-Regular</string>
+        </array>
+        <array key="Bookerly-Regular.ttf">
+            <string>Bookerly-Regular</string>
+        </array>
+    </customFonts>
+    <scenes>
+        <!--Alexa Web View Controller-->
+        <scene sceneID="s0d-6b-0kx">
+            <objects>
+                <viewController storyboardIdentifier="ESPAlexaWebViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="Y6W-OH-hqX" customClass="ESPAlexaWebViewController" customModule="ESP_RainMaker" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="5EZ-qb-Rvc">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pyW-qy-a74">
+                                <rect key="frame" x="10" y="0.0" width="48" height="30"/>
+                                <state key="normal" title="Cancel"/>
+                                <connections>
+                                    <action selector="cancelClicked:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="27l-gQ-jph"/>
+                                </connections>
+                            </button>
+                            <wkWebView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="SfD-PU-5hC">
+                                <rect key="frame" x="0.0" y="30" width="414" height="706"/>
+                                <color key="backgroundColor" red="0.36078431370000003" green="0.38823529410000002" blue="0.4039215686" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <wkWebViewConfiguration key="configuration">
+                                    <audiovisualMediaTypes key="mediaTypesRequiringUserActionForPlayback" none="YES"/>
+                                    <wkPreferences key="preferences"/>
+                                </wkWebViewConfiguration>
+                            </wkWebView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="vDu-zF-Fre"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="SfD-PU-5hC" firstAttribute="top" secondItem="pyW-qy-a74" secondAttribute="bottom" id="0Qn-3Z-2lc"/>
+                            <constraint firstItem="pyW-qy-a74" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="10" id="Fw6-En-hFa"/>
+                            <constraint firstItem="pyW-qy-a74" firstAttribute="top" secondItem="vDu-zF-Fre" secondAttribute="top" id="Nm8-q3-3wY"/>
+                            <constraint firstItem="vDu-zF-Fre" firstAttribute="bottom" secondItem="SfD-PU-5hC" secondAttribute="bottom" id="RYh-iq-kbg"/>
+                            <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="SfD-PU-5hC" secondAttribute="trailing" id="Uy5-Rx-P9U"/>
+                            <constraint firstItem="SfD-PU-5hC" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" id="dSV-Zf-zD1"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="webView" destination="SfD-PU-5hC" id="JyS-qC-tJI"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Ief-a0-LHa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="135" y="84"/>
+        </scene>
+        <!--Alexa Connect View Controller-->
+        <scene sceneID="rz9-jq-dG8">
+            <objects>
+                <viewController storyboardIdentifier="ESPAlexaConnectViewController" modalPresentationStyle="currentContext" useStoryboardIdentifierAsRestorationIdentifier="YES" id="r6I-WK-3bh" customClass="ESPAlexaConnectViewController" customModule="ESP_RainMaker" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="xgN-sn-AwZ">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="cYE-Aj-WkN" customClass="TopBarView" customModule="ESP_RainMaker" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="78.666666666666671"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="w5M-Qe-3M9" customClass="BarButton" customModule="ESP_RainMaker" customModuleProvider="target">
+                                        <rect key="frame" x="16" y="30" width="50" height="50"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="50" id="9yD-Ns-Tzi"/>
+                                            <constraint firstAttribute="width" constant="50" id="wb8-vN-Cv3"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" name="AmazonEmberDisplay-Bold" family="Amazon Ember Display" pointSize="17"/>
+                                        <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                        <state key="normal" title="Back"/>
+                                        <connections>
+                                            <action selector="backClicked:" destination="r6I-WK-3bh" eventType="touchUpInside" id="jwD-pJ-vNM"/>
+                                        </connections>
+                                    </button>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Amazon Alexa" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VCk-RD-BIz" customClass="BarTitle" customModule="ESP_RainMaker" customModuleProvider="target">
+                                        <rect key="frame" x="153.66666666666666" y="45.333333333333336" width="106.66666666666666" height="19.333333333333336"/>
+                                        <fontDescription key="fontDescription" name="AmazonEmberDisplay-Bold" family="Amazon Ember Display" pointSize="16"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <constraints>
+                                    <constraint firstItem="w5M-Qe-3M9" firstAttribute="centerY" secondItem="VCk-RD-BIz" secondAttribute="centerY" id="867-YK-bVs"/>
+                                    <constraint firstAttribute="height" relation="lessThanOrEqual" constant="96" id="BKe-xu-aA8"/>
+                                    <constraint firstAttribute="bottom" secondItem="VCk-RD-BIz" secondAttribute="bottom" constant="14" id="Vs0-mN-QcI"/>
+                                    <constraint firstItem="VCk-RD-BIz" firstAttribute="centerX" secondItem="cYE-Aj-WkN" secondAttribute="centerX" id="iIs-VK-A6X"/>
+                                    <constraint firstItem="w5M-Qe-3M9" firstAttribute="leading" secondItem="cYE-Aj-WkN" secondAttribute="leading" constant="16" id="ypj-98-Ddb"/>
+                                </constraints>
+                            </view>
+                            <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="9ol-pi-hl2">
+                                <rect key="frame" x="0.0" y="78.666666666666686" width="414" height="657.33333333333326"/>
+                                <subviews>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="EmC-gF-S42">
+                                        <rect key="frame" x="88.666666666666686" y="69.999999999999986" width="237" height="35"/>
+                                        <subviews>
+                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="alexa_horizontal_text" translatesAutoresizingMaskIntoConstraints="NO" id="Bb8-w6-6mn">
+                                                <rect key="frame" x="0.0" y="0.0" width="237" height="35"/>
+                                            </imageView>
+                                        </subviews>
+                                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" secondItem="EmC-gF-S42" secondAttribute="height" multiplier="6.76" id="2CO-tG-kQA"/>
+                                            <constraint firstItem="Bb8-w6-6mn" firstAttribute="leading" secondItem="EmC-gF-S42" secondAttribute="leading" id="90C-ib-YhP"/>
+                                            <constraint firstAttribute="bottom" secondItem="Bb8-w6-6mn" secondAttribute="bottom" id="IH4-If-Cw9"/>
+                                            <constraint firstItem="Bb8-w6-6mn" firstAttribute="top" secondItem="EmC-gF-S42" secondAttribute="top" id="Maj-FK-vFG"/>
+                                            <constraint firstAttribute="trailing" secondItem="Bb8-w6-6mn" secondAttribute="trailing" id="fqJ-R5-fUE"/>
+                                            <constraint firstAttribute="width" constant="237" id="tiy-ek-HTy"/>
+                                        </constraints>
+                                    </view>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="justified" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uDD-NO-wpO">
+                                        <rect key="frame" x="50" y="186" width="314" height="90"/>
+                                        <string key="text">Binding your account with Amazon Alexa allows you to control your Smart Home Devices using Voice commands via Alexa enabled speakers. (Eg. Alexa, Turn on the Light)</string>
+                                        <fontDescription key="fontDescription" name="AmazonEmberDisplay-Regular" family="Amazon Ember Display" pointSize="15"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <button opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vry-Bh-FOd">
+                                        <rect key="frame" x="57" y="487.33333333333326" width="300" height="50"/>
+                                        <color key="backgroundColor" red="0.0" green="0.32852089410000002" blue="0.57488495110000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="300" id="Rp7-Xf-agW"/>
+                                            <constraint firstAttribute="height" constant="50" id="kpa-Tu-Z2M"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" name="AmazonEmberDisplay-Regular" family="Amazon Ember Display" pointSize="15"/>
+                                        <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                        <state key="normal" title="Link with Amazon Alexa">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </state>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                                <integer key="value" value="25"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                        <connections>
+                                            <action selector="linkWithAlexa:" destination="r6I-WK-3bh" eventType="touchUpInside" id="fIJ-2a-HAu"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <constraints>
+                                    <constraint firstItem="EmC-gF-S42" firstAttribute="top" secondItem="9ol-pi-hl2" secondAttribute="top" constant="70" id="P4M-L1-7Je"/>
+                                    <constraint firstAttribute="trailing" secondItem="uDD-NO-wpO" secondAttribute="trailing" constant="50" id="Pik-NC-jrx"/>
+                                    <constraint firstAttribute="bottom" secondItem="vry-Bh-FOd" secondAttribute="bottom" constant="120" id="Pj9-QL-9lC"/>
+                                    <constraint firstItem="uDD-NO-wpO" firstAttribute="leading" secondItem="9ol-pi-hl2" secondAttribute="leading" constant="50" id="YuF-k3-YA3"/>
+                                    <constraint firstItem="EmC-gF-S42" firstAttribute="centerX" secondItem="9ol-pi-hl2" secondAttribute="centerX" id="fGu-40-YV9"/>
+                                    <constraint firstItem="uDD-NO-wpO" firstAttribute="top" secondItem="EmC-gF-S42" secondAttribute="bottom" constant="81" id="t6R-lz-zjc"/>
+                                    <constraint firstItem="vry-Bh-FOd" firstAttribute="centerX" secondItem="9ol-pi-hl2" secondAttribute="centerX" id="ubN-wb-To9"/>
+                                </constraints>
+                            </view>
+                            <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="cUl-7u-Nvw">
+                                <rect key="frame" x="20" y="78.666666666666686" width="374" height="657.33333333333326"/>
+                                <subviews>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="alexa_no_text" translatesAutoresizingMaskIntoConstraints="NO" id="P5G-dS-jYO">
+                                        <rect key="frame" x="149.66666666666666" y="64.999999999999986" width="75" height="75.000000000000014"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" secondItem="P5G-dS-jYO" secondAttribute="height" id="zPK-SO-024"/>
+                                            <constraint firstAttribute="width" constant="75" id="zaU-LS-F8h"/>
+                                        </constraints>
+                                    </imageView>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Linked with Amazon Alexa" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Xfc-ex-ruE">
+                                        <rect key="frame" x="87" y="160" width="200" height="48"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="200" id="un2-hu-8kI"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" name="AmazonEmberDisplay-Heavy" family="Amazon Ember Display" pointSize="20"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="You can now control your Smart Home devices via Alexa enabled speakers using Voice commands." textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rNU-ks-gsi">
+                                        <rect key="frame" x="37" y="223" width="300" height="57.666666666666686"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="300" id="O6V-H6-kLR"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" name="AmazonEmberDisplay-Regular" family="Amazon Ember Display" pointSize="16"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bbC-e4-k9r">
+                                        <rect key="frame" x="37" y="295.66666666666663" width="300" height="0.0"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="300" id="gGf-QT-z9V"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" name="Bookerly-Regular" family="Bookerly" pointSize="15"/>
+                                        <color key="textColor" systemColor="systemGrayColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <button opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Uw5-Fc-qeI">
+                                        <rect key="frame" x="37" y="487.33333333333326" width="300" height="50"/>
+                                        <color key="backgroundColor" red="0.0" green="0.32852089410000002" blue="0.57488495110000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="50" id="s8d-cJ-vZy"/>
+                                            <constraint firstAttribute="width" constant="300" id="tWe-K5-Vjo"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" name="AmazonEmberDisplay-Regular" family="Amazon Ember Display" pointSize="15"/>
+                                        <color key="tintColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                        <state key="normal" title="Unlink from Amazon Alexa">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </state>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                                <integer key="value" value="25"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                        <connections>
+                                            <action selector="unlinkWithAlexa:" destination="r6I-WK-3bh" eventType="touchUpInside" id="KLo-I5-717"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="bottom" secondItem="Uw5-Fc-qeI" secondAttribute="bottom" constant="120" id="0Rj-fU-sgH"/>
+                                    <constraint firstItem="P5G-dS-jYO" firstAttribute="centerX" secondItem="cUl-7u-Nvw" secondAttribute="centerX" id="1t1-RO-GZ5"/>
+                                    <constraint firstItem="Xfc-ex-ruE" firstAttribute="centerX" secondItem="P5G-dS-jYO" secondAttribute="centerX" id="33Q-DZ-gYH"/>
+                                    <constraint firstItem="Xfc-ex-ruE" firstAttribute="top" secondItem="P5G-dS-jYO" secondAttribute="bottom" constant="20" id="4JL-C5-QCg"/>
+                                    <constraint firstItem="rNU-ks-gsi" firstAttribute="centerX" secondItem="cUl-7u-Nvw" secondAttribute="centerX" id="5Ah-sR-sTr"/>
+                                    <constraint firstItem="rNU-ks-gsi" firstAttribute="top" secondItem="Xfc-ex-ruE" secondAttribute="bottom" constant="15" id="694-XZ-sF7"/>
+                                    <constraint firstItem="Uw5-Fc-qeI" firstAttribute="centerX" secondItem="cUl-7u-Nvw" secondAttribute="centerX" id="Hku-4q-xRh"/>
+                                    <constraint firstItem="P5G-dS-jYO" firstAttribute="top" secondItem="cUl-7u-Nvw" secondAttribute="top" constant="65" id="RVp-FQ-iIo"/>
+                                    <constraint firstItem="bbC-e4-k9r" firstAttribute="top" secondItem="rNU-ks-gsi" secondAttribute="bottom" constant="15" id="hJH-5A-vK1"/>
+                                    <constraint firstItem="bbC-e4-k9r" firstAttribute="centerX" secondItem="cUl-7u-Nvw" secondAttribute="centerX" id="tsc-jP-fZv"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="iTV-Gj-ZE7"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstAttribute="trailingMargin" secondItem="cUl-7u-Nvw" secondAttribute="trailing" id="7M7-XT-iPu"/>
+                            <constraint firstItem="cYE-Aj-WkN" firstAttribute="top" secondItem="xgN-sn-AwZ" secondAttribute="top" id="7oe-J3-z59"/>
+                            <constraint firstItem="cUl-7u-Nvw" firstAttribute="leading" secondItem="xgN-sn-AwZ" secondAttribute="leadingMargin" id="ErH-XM-ZIi"/>
+                            <constraint firstItem="cYE-Aj-WkN" firstAttribute="height" secondItem="xgN-sn-AwZ" secondAttribute="height" multiplier="0.107" id="OXu-in-FVu"/>
+                            <constraint firstAttribute="bottomMargin" secondItem="cUl-7u-Nvw" secondAttribute="bottom" id="Qnw-F0-2mi"/>
+                            <constraint firstAttribute="bottom" secondItem="9ol-pi-hl2" secondAttribute="bottom" id="V3P-mZ-XWX"/>
+                            <constraint firstItem="cUl-7u-Nvw" firstAttribute="top" secondItem="cYE-Aj-WkN" secondAttribute="bottom" id="dfj-zu-IA0"/>
+                            <constraint firstAttribute="trailing" secondItem="9ol-pi-hl2" secondAttribute="trailing" id="hND-Kc-m5w"/>
+                            <constraint firstItem="iTV-Gj-ZE7" firstAttribute="trailing" secondItem="cYE-Aj-WkN" secondAttribute="trailing" id="ivL-6E-aUI"/>
+                            <constraint firstItem="9ol-pi-hl2" firstAttribute="top" secondItem="cYE-Aj-WkN" secondAttribute="bottom" id="jti-Sy-kRL"/>
+                            <constraint firstItem="cYE-Aj-WkN" firstAttribute="leading" secondItem="xgN-sn-AwZ" secondAttribute="leading" id="rKe-qd-iTX"/>
+                            <constraint firstItem="9ol-pi-hl2" firstAttribute="leading" secondItem="xgN-sn-AwZ" secondAttribute="leading" id="sqo-Lr-Aj2"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="alexaControlsLabel" destination="bbC-e4-k9r" id="moy-Hf-ZUy"/>
+                        <outlet property="connectToAlexaView" destination="9ol-pi-hl2" id="omd-PJ-DlT"/>
+                        <outlet property="connectedToAlexaView" destination="cUl-7u-Nvw" id="eu3-SY-Mbh"/>
+                        <outlet property="linkWithAlexaButton" destination="vry-Bh-FOd" id="fqv-Sm-700"/>
+                        <outlet property="unlinkWithAlexaButton" destination="Uw5-Fc-qeI" id="5YB-tX-8gO"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Rpi-Mb-WMS" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1101.449275362319" y="566.51785714285711"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="alexa_horizontal_text" width="1784" height="264"/>
+        <image name="alexa_no_text" width="264" height="265"/>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemGrayColor">
+            <color red="0.55686274509803924" green="0.55686274509803924" blue="0.57647058823529407" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+    </resources>
+</document>

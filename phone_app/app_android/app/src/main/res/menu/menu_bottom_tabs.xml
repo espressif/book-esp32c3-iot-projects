@@ -1,0 +1,28 @@
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+    <item
+        android:id="@+id/action_devices"
+        android:icon="@drawable/ic_tab_devices"
+        android:orderInCategory="100"
+        android:title="@string/tab_devices"
+        app:showAsAction="never" />
+    <item
+        android:id="@+id/action_schedules"
+        android:icon="@drawable/ic_tab_schedules"
+        android:orderInCategory="100"
+        android:title="@string/tab_schedules"
+        app:showAsAction="never" />
+    <item
+        android:id="@+id/action_scenes"
+        android:icon="@drawable/ic_tab_scenes"
+        android:orderInCategory="100"
+        android:title="@string/tab_scenes"
+        app:showAsAction="never" />
+    <item
+        android:id="@+id/action_user"
+        android:icon="@drawable/ic_tab_setting"
+        android:orderInCategory="100"
+        android:title="@string/tab_settings"
+        app:showAsAction="never" />
+</menu>

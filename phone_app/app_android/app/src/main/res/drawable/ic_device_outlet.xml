@@ -1,0 +1,46 @@
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:aapt="http://schemas.android.com/aapt"
+    android:width="48dp"
+    android:height="48dp"
+    android:viewportWidth="48"
+    android:viewportHeight="48">
+    <path
+        android:fillAlpha="0.3"
+        android:fillType="nonZero"
+        android:pathData="M8,0L32,0A8,8 0,0 1,40 8L40,40A8,8 0,0 1,32 48L8,48A8,8 0,0 1,0 40L0,8A8,8 0,0 1,8 0z"
+        android:strokeAlpha="0.3">
+        <aapt:attr name="android:fillColor">
+            <gradient
+                android:endX="20"
+                android:endY="48"
+                android:startX="20"
+                android:startY="0"
+                android:type="linear">
+                <item
+                    android:color="#FF5330B9"
+                    android:offset="0" />
+                <item
+                    android:color="#FF8181A8"
+                    android:offset="1" />
+            </gradient>
+        </aapt:attr>
+    </path>
+    <path
+        android:fillColor="#00000000"
+        android:fillType="nonZero"
+        android:pathData="M32.95,32.95A6.978,6.978 0,0 1,28 35H12a6.978,6.978 0,0 1,-4.95 -2.05A6.978,6.978 0,0 1,5 28V12c0,-1.933 0.784,-3.683 2.05,-4.95A6.978,6.978 0,0 1,12 5h16c1.933,0 3.683,0.784 4.95,2.05A6.978,6.978 0,0 1,35 12v16a6.978,6.978 0,0 1,-2.05 4.95z"
+        android:strokeWidth="2"
+        android:strokeColor="#8181A8" />
+    <path
+        android:fillColor="#8181A8"
+        android:fillType="evenOdd"
+        android:pathData="M20,12L20,12A2,2 0,0 1,22 14L22,18A2,2 0,0 1,20 20L20,20A2,2 0,0 1,18 18L18,14A2,2 0,0 1,20 12z" />
+    <path
+        android:fillColor="#8181A8"
+        android:fillType="evenOdd"
+        android:pathData="M30,27L30,27A2,2 0,0 1,28 29L24,29A2,2 0,0 1,22 27L22,27A2,2 0,0 1,24 25L28,25A2,2 0,0 1,30 27z" />
+    <path
+        android:fillColor="#8181A8"
+        android:fillType="evenOdd"
+        android:pathData="M18,27L18,27A2,2 0,0 1,16 29L12,29A2,2 0,0 1,10 27L10,27A2,2 0,0 1,12 25L16,25A2,2 0,0 1,18 27z" />
+</vector>

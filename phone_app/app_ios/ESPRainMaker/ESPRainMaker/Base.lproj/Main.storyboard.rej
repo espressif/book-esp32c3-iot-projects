@@ -1,0 +1,17 @@
+***************
+*** 365,372 ****
+      </scenes>
+      <resources>
+          <image name="bluetooth_icon" width="100" height="160"/>
+-         <image name="btnLWA_gold_209x48" width="209" height="48"/>
+-         <image name="btnLWA_gold_209x48_pressed" width="209" height="48"/>
+          <image name="wifi_symbol" width="109" height="83"/>
+      </resources>
+  </document>
+--- 336,341 ----
+      </scenes>
+      <resources>
+          <image name="bluetooth_icon" width="100" height="160"/>
+          <image name="wifi_symbol" width="109" height="83"/>
+      </resources>
+  </document>

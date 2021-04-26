@@ -1,0 +1,107 @@
+stages:
+  - build
+  - deploy
+
+variables:
+  PYTHON_VER: 3.6.13
+  BATCH_BUILD: "1"
+  V: "0"
+  IDF_CI_BUILD: "1"
+
+before_script:
+  # add gitlab ssh key
+  - mkdir -p ~/.ssh
+  - chmod 700 ~/.ssh
+  - echo -n $GITLAB_KEY > ~/.ssh/id_rsa_base64
+  - base64 --decode --ignore-garbage ~/.ssh/id_rsa_base64 > ~/.ssh/id_rsa
+  - chmod 600 ~/.ssh/id_rsa
+  - echo -e "Host gitlab.espressif.cn\n\tStrictHostKeyChecking no\n" >> ~/.ssh/config
+  - git --version
+  - git submodule update --init --recursive --force
+  - export LC_ALL="C.UTF-8" # Add UTF-8 support
+  - echo $PWD
+  - cd ../
+  - rm -rf esp-rainmaker
+  - git clone --recursive https://github.com/espressif/esp-rainmaker.git
+  - echo $PWD
+  - cd esp-rainmaker
+  - export RAIMAKER_PATH="$PWD"
+  - echo $PWD
+  - cd $IDF_PATH
+  - git apply $RAIMAKER_PATH/../book-esp32c3-iot-projects/device_firmware/7_insights/idf_v4.3.2.patch
+  - cd -
+  - cd ../book-esp32c3-iot-projects
+
+.build_examples_template: &build_examples_template
+  stage: build
+  image: espressif/idf:v4.3.2
+  tags:
+    - build
+
+build_basic_example_cmake:
+  <<: *build_examples_template
+  script:
+    - cd device_firmware
+    - cd 1_blink
+    - idf.py fullclean
+    - idf.py set-target esp32c3 
+    - idf.py build
+    - cd ../
+    - cd 2_light_drivers
+    - idf.py fullclean
+    - idf.py set-target esp32c3 
+    - idf.py build
+    - cd ../
+    - cd 3_wifi_connection
+    - idf.py fullclean
+    - idf.py set-target esp32c3 
+    - idf.py build
+    - cd ../
+    - cd 4_network_config
+    - idf.py fullclean
+    - idf.py set-target esp32c3 
+    - idf.py build
+    - cd ../
+    - cd 5_rainmaker
+    - idf.py fullclean
+    - idf.py set-target esp32c3 
+    - idf.py build
+    - cd ../
+    - cd 6_project_optimize
+    - idf.py fullclean
+    - idf.py set-target esp32c3 
+    - idf.py build
+    - cd ../
+    - cd 7_insights
+    - idf.py fullclean
+    - idf.py set-target esp32c3 
+    - idf.py build
+
+# push_master_to_github:
+#   stage: deploy
+#   only:
+#     - main
+#     - /^release\/v/
+# #  when: on_success
+#   image: $CI_DOCKER_REGISTRY/esp32-ci-env
+#   variables:
+#     GIT_STRATEGY: clone
+#     GITHUB_PUSH_REFS: refs/remotes/origin/release refs/remotes/origin/master
+#   before_script:
+#     - echo "skip default before_script"
+#   script:
+#     - mkdir -p ~/.ssh
+#     - chmod 700 ~/.ssh
+#     - echo -n $GH_PUSH_KEY >> ~/.ssh/id_rsa_base64
+#     - base64 --decode --ignore-garbage ~/.ssh/id_rsa_base64 > ~/.ssh/id_rsa
+#     - chmod 600 ~/.ssh/id_rsa
+#     - echo -e "Host github.com\n\tStrictHostKeyChecking no\n" >> ~/.ssh/config
+#     - git remote add github git@github.com:espressif/book-esp32c3-iot-projects.git
+#     # What the next line of script does: goes through the list of refs for all branches we push to github,
+#     # generates a snippet of shell which is evaluated. The snippet checks CI_BUILD_REF against the SHA
+#     # (aka objectname) at tip of each branch, and if any SHAs match then it checks out the local branch
+#     # and then pushes that ref to a corresponding github branch
+#     #
+#     # NB: In gitlab 9.x, CI_BUILD_REF was deprecated. New name is CI_COMMIT_REF. If below command suddenly
+#     # generates bash syntax errors, this is probably why.
+#     - eval $(git for-each-ref --shell bash --format 'if [ $CI_BUILD_REF == %(objectname) ]; then git checkout -B %(refname:strip=3); git push --follow-tags github %(refname:strip=3); fi;' $GITHUB_PUSH_REFS)

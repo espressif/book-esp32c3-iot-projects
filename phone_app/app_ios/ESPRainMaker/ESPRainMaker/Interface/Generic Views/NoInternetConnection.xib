@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="15702" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15704"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB" customClass="NoInternetConnection" customModule="RainMaker" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Ygd-kJ-2kY">
+                    <rect key="frame" x="30" y="50" width="354" height="796"/>
+                    <subviews>
+                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="no_internet" translatesAutoresizingMaskIntoConstraints="NO" id="rci-Hq-5Q1">
+                            <rect key="frame" x="102" y="60" width="150" height="150"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="150" id="iAL-U4-Cci"/>
+                                <constraint firstAttribute="width" constant="150" id="zKq-9F-zMT"/>
+                            </constraints>
+                        </imageView>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="j1R-6a-S0Y">
+                            <rect key="frame" x="102" y="666" width="150" height="50"/>
+                            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="50" id="n9k-0K-P0N"/>
+                                <constraint firstAttribute="width" constant="150" id="omN-F7-Y4Q"/>
+                            </constraints>
+                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                            <state key="normal" title="Retry">
+                                <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </state>
+                            <userDefinedRuntimeAttributes>
+                                <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                    <real key="value" value="15"/>
+                                </userDefinedRuntimeAttribute>
+                                <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                    <real key="value" value="2"/>
+                                </userDefinedRuntimeAttribute>
+                                <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
+                                    <color key="value" red="0.32549019610000002" green="0.18823529410000001" blue="0.72549019609999998" alpha="1" colorSpace="calibratedRGB"/>
+                                </userDefinedRuntimeAttribute>
+                            </userDefinedRuntimeAttributes>
+                            <connections>
+                                <action selector="retryPressed:" destination="iN0-l3-epB" eventType="touchUpInside" id="9g9-s9-IRd"/>
+                            </connections>
+                        </button>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Oops!!" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lLn-8K-Dgf">
+                            <rect key="frame" x="145" y="240" width="64" height="26.5"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="22"/>
+                            <color key="textColor" red="1" green="0.32156862749999998" blue="0.027450980390000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="No Internet Connection. Make sure that Wi-Fi or mobile data is turned on, then try again." textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ifA-O2-j3M">
+                            <rect key="frame" x="40" y="316.5" width="274" height="61"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                            <nil key="textColor"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                    </subviews>
+                    <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                    <constraints>
+                        <constraint firstItem="lLn-8K-Dgf" firstAttribute="centerX" secondItem="Ygd-kJ-2kY" secondAttribute="centerX" id="2Il-hW-MDl"/>
+                        <constraint firstAttribute="trailing" secondItem="ifA-O2-j3M" secondAttribute="trailing" constant="40" id="EHY-kH-ZRB"/>
+                        <constraint firstItem="rci-Hq-5Q1" firstAttribute="centerX" secondItem="Ygd-kJ-2kY" secondAttribute="centerX" id="EQJ-gf-819"/>
+                        <constraint firstItem="lLn-8K-Dgf" firstAttribute="top" secondItem="rci-Hq-5Q1" secondAttribute="bottom" constant="30" id="GlA-fC-UCt"/>
+                        <constraint firstAttribute="bottom" secondItem="j1R-6a-S0Y" secondAttribute="bottom" constant="80" id="IpK-R3-1cj"/>
+                        <constraint firstItem="rci-Hq-5Q1" firstAttribute="top" secondItem="Ygd-kJ-2kY" secondAttribute="top" constant="60" id="S0f-Ao-cTg"/>
+                        <constraint firstItem="ifA-O2-j3M" firstAttribute="leading" secondItem="Ygd-kJ-2kY" secondAttribute="leading" constant="40" id="lf4-fa-eIg"/>
+                        <constraint firstItem="j1R-6a-S0Y" firstAttribute="centerX" secondItem="Ygd-kJ-2kY" secondAttribute="centerX" id="qXu-IP-IGl"/>
+                        <constraint firstItem="ifA-O2-j3M" firstAttribute="top" secondItem="lLn-8K-Dgf" secondAttribute="bottom" constant="50" id="wzM-y7-ksx"/>
+                        <constraint firstItem="ifA-O2-j3M" firstAttribute="centerX" secondItem="Ygd-kJ-2kY" secondAttribute="centerX" id="ztM-7A-3DL"/>
+                    </constraints>
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                            <real key="value" value="10"/>
+                        </userDefinedRuntimeAttribute>
+                    </userDefinedRuntimeAttributes>
+                </view>
+            </subviews>
+            <color key="backgroundColor" white="0.0" alpha="0.51399293664383561" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+            <constraints>
+                <constraint firstAttribute="bottom" secondItem="Ygd-kJ-2kY" secondAttribute="bottom" constant="50" id="EjE-8e-oKv"/>
+                <constraint firstItem="Ygd-kJ-2kY" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="50" id="dU4-06-6ZE"/>
+                <constraint firstAttribute="trailing" secondItem="Ygd-kJ-2kY" secondAttribute="trailing" constant="30" id="vPb-ZP-dE0"/>
+                <constraint firstItem="Ygd-kJ-2kY" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="30" id="zeh-yU-N2s"/>
+            </constraints>
+            <viewLayoutGuide key="safeArea" id="Euf-SE-JKc"/>
+            <point key="canvasLocation" x="139" y="130"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="no_internet" width="64" height="64"/>
+    </resources>
+</document>

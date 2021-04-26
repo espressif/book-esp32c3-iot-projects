@@ -1,0 +1,114 @@
+
+/* Class = "UIButton"; normalTitle = "Confirm"; ObjectID = "0mh-6Y-WXI"; */
+"0mh-6Y-WXI.normalTitle" = "Confirm";
+
+/* Class = "UITextField"; placeholder = "Confirm Password"; ObjectID = "1xx-Av-yRj"; */
+"1xx-Av-yRj.placeholder" = "Confirm Password";
+
+/* Class = "UILabel"; text = "Confirm User"; ObjectID = "4oS-bc-CpR"; */
+"4oS-bc-CpR.text" = "Confirm User";
+
+/* Class = "UILabel"; text = "Code sent to:"; ObjectID = "5Lk-o1-eQs"; */
+"5Lk-o1-eQs.text" = "Code sent to:";
+
+/* Class = "UISegmentedControl"; 88g-vZ-6Pe.segmentTitles[0] = "LOGIN"; ObjectID = "88g-vZ-6Pe"; */
+"88g-vZ-6Pe.segmentTitles[0]" = "LOGIN";
+
+/* Class = "UISegmentedControl"; 88g-vZ-6Pe.segmentTitles[1] = "SIGN UP"; ObjectID = "88g-vZ-6Pe"; */
+"88g-vZ-6Pe.segmentTitles[1]" = "SIGN UP";
+
+/* Class = "UITextField"; placeholder = "Confirm Password"; ObjectID = "8mB-EP-5Ss"; */
+"8mB-EP-5Ss.placeholder" = "Confirm Password";
+
+/* Class = "UIButton"; normalTitle = "Cancel"; ObjectID = "9Js-sE-gsW"; */
+"9Js-sE-gsW.normalTitle" = "Cancel";
+
+/* Class = "UITextField"; placeholder = "Password"; ObjectID = "9ju-xn-L6Y"; */
+"9ju-xn-L6Y.placeholder" = "Password";
+
+/* Class = "UITextField"; placeholder = "Confirmation Code"; ObjectID = "DXK-W6-OxS"; */
+"DXK-W6-OxS.placeholder" = "Confirmation Code";
+
+/* Class = "UIButton"; normalTitle = "Resend Confirmation Code"; ObjectID = "ERk-vr-Ven"; */
+"ERk-vr-Ven.normalTitle" = "Resend Confirmation Code";
+
+/* Class = "UILabel"; text = "Password should contain at least one capital letter, special character and number."; ObjectID = "EnL-64-Qqm"; */
+"EnL-64-Qqm.text" = "Password should contain at least one capital letter, special character and number.";
+
+/* Class = "UILabel"; text = "or use your email id"; ObjectID = "FFy-79-By5"; */
+"FFy-79-By5.text" = "or use your email id";
+
+/* Class = "UIButton"; normalTitle = "Reset Password"; ObjectID = "FGx-IB-54K"; */
+"FGx-IB-54K.normalTitle" = "Reset Password";
+
+/* Class = "UIButton"; normalTitle = "Register"; ObjectID = "GPM-zl-nF5"; */
+"GPM-zl-nF5.normalTitle" = "Register";
+
+/* Class = "UITextField"; placeholder = "Email"; ObjectID = "HT5-AL-XVD"; */
+"HT5-AL-XVD.placeholder" = "Email";
+
+/* Class = "UIButton"; normalTitle = "Forgot password?"; ObjectID = "N0c-II-QAS"; */
+"N0c-II-QAS.normalTitle" = "Forgot password?";
+
+/* Class = "UILabel"; text = "Forgot Password"; ObjectID = "N2v-5h-wSd"; */
+"N2v-5h-wSd.text" = "Forgot Password";
+
+/* Class = "UIButton"; normalTitle = "Documentation"; ObjectID = "Nte-Hn-u6r"; */
+"Nte-Hn-u6r.normalTitle" = "Documentation";
+
+/* Class = "UIButton"; normalTitle = "Back"; ObjectID = "SQe-69-CWe"; */
+"SQe-69-CWe.normalTitle" = "Back";
+
+/* Class = "UIButton"; normalTitle = "Cancel"; ObjectID = "Ss1-4G-4US"; */
+"Ss1-4G-4US.normalTitle" = "Cancel";
+
+/* Class = "UIButton"; normalTitle = "Terms & Conditions"; ObjectID = "TTe-Mf-ssw"; */
+"TTe-Mf-ssw.normalTitle" = "Terms & Conditions";
+
+/* Class = "UIButton"; normalTitle = "Privacy"; ObjectID = "UHd-4C-Y0a"; */
+"UHd-4C-Y0a.normalTitle" = "Privacy";
+
+/* Class = "UILabel"; text = "I agree to these"; ObjectID = "Xh9-pd-L28"; */
+"Xh9-pd-L28.text" = "I agree to these";
+
+/* Class = "UILabel"; text = "Password should contain at least one capital letter, one special character and a number."; ObjectID = "YPd-xb-bfy"; */
+"YPd-xb-bfy.text" = "Password should contain at least one capital letter, one special character and a number.";
+
+/* Class = "UIButton"; normalTitle = "Terms & Conditions"; ObjectID = "bdv-Bv-ccB"; */
+"bdv-Bv-ccB.normalTitle" = "Terms & Conditions";
+
+/* Class = "UIButton"; normalTitle = "Login"; ObjectID = "dkG-ck-a8M"; */
+"dkG-ck-a8M.normalTitle" = "Login";
+
+/* Class = "UIButton"; normalTitle = "Cancel"; ObjectID = "f29-Y5-riN"; */
+"f29-Y5-riN.normalTitle" = "Cancel";
+
+/* Class = "UILabel"; text = "Please enter your registered email id to reset your password."; ObjectID = "gKX-ex-fKU"; */
+"gKX-ex-fKU.text" = "Please enter your registered email id to reset your password.";
+
+/* Class = "UITextField"; placeholder = "Email"; ObjectID = "h4Y-lz-Rgy"; */
+"h4Y-lz-Rgy.placeholder" = "Email";
+
+/* Class = "UITextField"; placeholder = "Password"; ObjectID = "iHL-JY-aSZ"; */
+"iHL-JY-aSZ.placeholder" = "Password";
+
+/* Class = "UILabel"; text = "Reset Password"; ObjectID = "lav-jU-c1A"; */
+"lav-jU-c1A.text" = "Reset Password";
+
+/* Class = "UITextField"; placeholder = "Verification Code"; ObjectID = "lw9-JZ-Vz6"; */
+"lw9-JZ-Vz6.placeholder" = "Verification Code";
+
+/* Class = "UIButton"; normalTitle = "Set Password"; ObjectID = "rQn-tz-G8q"; */
+"rQn-tz-G8q.normalTitle" = "Set Password";
+
+/* Class = "UILabel"; text = "To set a new password we sent a verification code to "; ObjectID = "tZH-nQ-skT"; */
+"tZH-nQ-skT.text" = "To set a new password we sent a verification code to ";
+
+/* Class = "UITextField"; placeholder = "Email"; ObjectID = "vbf-DW-tCX"; */
+"vbf-DW-tCX.placeholder" = "Email";
+
+/* Class = "UILabel"; text = "Login with"; ObjectID = "vs0-mr-40V"; */
+"vs0-mr-40V.text" = "Login with";
+
+/* Class = "UITextField"; placeholder = "New Password"; ObjectID = "zpl-bT-SzX"; */
+"zpl-bT-SzX.placeholder" = "New Password";

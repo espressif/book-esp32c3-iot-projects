@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="deviceGroupEmptyDeviceCVC" id="gTV-IL-0wX" customClass="DeviceGroupEmptyDeviceCollectionViewCell" customModule="ESP_RainMaker" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="280" height="266"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                <rect key="frame" x="0.0" y="0.0" width="280" height="266"/>
+                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                <subviews>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="pJM-JO-RQT">
+                        <rect key="frame" x="0.0" y="0.0" width="280" height="266"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="No Devices to show" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CN2-GL-bf0">
+                                <rect key="frame" x="51.5" y="121" width="177" height="24"/>
+                                <fontDescription key="fontDescription" type="system" weight="medium" pointSize="20"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sHB-8G-5p0" customClass="PrimaryButton" customModule="ESP_RainMaker" customModuleProvider="target">
+                                <rect key="frame" x="80" y="153" width="120" height="50"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="120" id="aHv-k0-21O"/>
+                                    <constraint firstAttribute="height" constant="50" id="fqD-Ej-fEL"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <state key="normal" title="Add Devices">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <connections>
+                                    <action selector="addDeviceButtonPressed:" destination="gTV-IL-0wX" eventType="touchUpInside" id="S4L-p9-HpM"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="sHB-8G-5p0" firstAttribute="top" secondItem="CN2-GL-bf0" secondAttribute="bottom" constant="8" id="6Fd-L9-xau"/>
+                            <constraint firstItem="CN2-GL-bf0" firstAttribute="centerX" secondItem="pJM-JO-RQT" secondAttribute="centerX" id="KpB-I4-Rsi"/>
+                            <constraint firstItem="CN2-GL-bf0" firstAttribute="centerY" secondItem="pJM-JO-RQT" secondAttribute="centerY" id="M2c-Ti-jwW"/>
+                            <constraint firstItem="sHB-8G-5p0" firstAttribute="centerX" secondItem="pJM-JO-RQT" secondAttribute="centerX" id="OyD-2R-vaQ"/>
+                        </constraints>
+                    </view>
+                </subviews>
+            </view>
+            <viewLayoutGuide key="safeArea" id="ZTg-uK-7eu"/>
+            <constraints>
+                <constraint firstAttribute="trailing" secondItem="pJM-JO-RQT" secondAttribute="trailing" id="0SG-xb-ENn"/>
+                <constraint firstItem="pJM-JO-RQT" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="Mu2-lI-96y"/>
+                <constraint firstItem="pJM-JO-RQT" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="elL-1x-IW3"/>
+                <constraint firstAttribute="bottom" secondItem="pJM-JO-RQT" secondAttribute="bottom" id="hSz-q3-pfz"/>
+            </constraints>
+            <size key="customSize" width="280" height="266"/>
+            <point key="canvasLocation" x="304.34782608695656" y="129.91071428571428"/>
+        </collectionViewCell>
+    </objects>
+</document>
