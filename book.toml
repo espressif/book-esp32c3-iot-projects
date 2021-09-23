@@ -1,0 +1,12 @@
+[book]
+authors = ["Espressif Systems"]
+language = "cn"
+multilingual = false
+src = "src"
+title = "ESP32-C3 实战之快速构建物联网项目"
+
+[output.html]
+no-section-label = true
+
+[output.html.print]
+enable = true
