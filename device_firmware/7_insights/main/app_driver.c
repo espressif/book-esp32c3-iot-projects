@@ -107,7 +107,7 @@ esp_err_t app_light_set(uint32_t hue, uint32_t saturation, uint32_t brightness)
 
 esp_err_t app_light_set_brightness(uint16_t brightness)
 {
-    return light_driver_set_brightness(brightness);
+    return light_driver_set_value(brightness);
 }
 
 esp_err_t app_light_set_hue(uint16_t hue)
