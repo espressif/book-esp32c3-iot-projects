@@ -40,7 +40,8 @@ void app_driver_init()
     };
     button_handle_t btn_handle = iot_button_create(&btn_cfg);
     if (btn_handle) {
-        iot_button_register_cb(btn_handle, BUTTON_PRESS_UP, push_btn_cb);
+        /* Register a callback for a button short press event */
+        iot_button_register_cb(btn_handle, BUTTON_SINGLE_CLICK, push_btn_cb);
     }
 
     /**

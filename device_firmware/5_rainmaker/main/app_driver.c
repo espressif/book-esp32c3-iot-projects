@@ -16,16 +16,25 @@
 #include "iot_button.h"
 #include "light_driver.h"
 
+#include <esp_rmaker_utils.h>
+
 #include DEVELOPMENT_BOARD
 #include "app_priv.h"
 
 #define TAG "app_driver"
+
+#define REBOOT_DELAY        2
 
 static bool g_output_state = true;
 
 static void push_btn_cb(void *arg)
 {
     app_driver_set_state(!g_output_state);
+}
+
+static void factory_reset_trigger(void *arg)
+{
+    esp_rmaker_factory_reset(0, REBOOT_DELAY);
 }
 
 void app_driver_init()
@@ -40,7 +49,10 @@ void app_driver_init()
     };
     button_handle_t btn_handle = iot_button_create(&btn_cfg);
     if (btn_handle) {
-        iot_button_register_cb(btn_handle, BUTTON_PRESS_UP, push_btn_cb);
+        /* Register a callback for a button short press event */
+        iot_button_register_cb(btn_handle, BUTTON_SINGLE_CLICK, push_btn_cb);
+        /* Register a callback for a button long press event */
+        iot_button_register_cb(btn_handle, BUTTON_LONG_PRESS_START, factory_reset_trigger);
     }
 
     /**
