@@ -137,6 +137,7 @@ esp_err_t light_driver_set_rgb(uint8_t red, uint8_t green, uint8_t blue)
 static esp_err_t light_driver_hsv2rgb(uint16_t hue, uint8_t saturation, uint8_t value,
                                       uint8_t *red, uint8_t *green, uint8_t *blue)
 {
+    hue = hue % 360;
     uint16_t hi = (hue / 60) % 6;
     uint16_t F = 100 * hue / 60 - 100 * hi;
     uint16_t P = value * (100 - saturation) / 100;
