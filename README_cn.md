@@ -11,9 +11,10 @@
     * ESP32-C3-DevKitM-1开发板 <br/> _另赠送本书配套的实战案例中的RGB模块单片机开发小板加杜邦线、可用来模拟智能灯具，学习LED PWM编程等相关知识。_
 * [套餐2](https://item.taobao.com/item.htm?spm=a1z10.5-c.w4002-8715811636.11.1a735d4dQyRIJA&id=684989813649)
     * 书
-    * ESP32-C3-Lyra 音频灯控开发板 <br/> _另赠送全彩16灯的天使眼圆环LED。规格：16位环形WS2812B串行全彩LED模块、5V单点可控编程。_
+    * [ESP32-C3-Lyra 音频灯控开发板](https://espressif-docs.readthedocs-hosted.com/projects/esp-adf/zh_CN/latest/design-guide/dev-boards/user-guide-esp32-c3-lyra-v2.0.html)<br/> _另赠送全彩16灯的天使眼圆环LED。规格：16位环形WS2812B串行全彩LED模块、5V单点可控编程。_<br/>
+    更多资料参考：[LED 像素显示示例代码](https://github.com/espressif/esp-adf/blob/master/examples/display/led_pixels/README_CN.md)
 
-或打开手机淘宝App，扫码下图中二维码
+打开手机淘宝App，扫码下图中二维码
 ![Poster](merged.png)
 
 仓库目录结构：
