@@ -5,7 +5,7 @@
 功能：
 
 1. 持续打印 "Hello World" 日志
-2. 控制 LED 灯闪烁。
+2. 控制 LED 灯闪烁。（注意：ESP32-C3-Lyra 或 ESP32-C3-DevKitM-1 开发板上的 LED 是不适用 Blink 例程的， 因为其为单线控制 LED，WS2812 或 SK68xx，可以参考相关例程 esp-idf/examples/peripherals/rmt/led_strip）
 
 ## 开发环境搭建
 
