@@ -4,7 +4,7 @@
 
 ### About this book
 
-《ESP32-C3物联网工程项目指导》, _IoT Guidance based on ESP32-C3_ in English, is a book written by Espressif enigneers, that provides detailed guidance on IoT development, including hardware design based on ESP32-C3, ESP-IDF, Wi-Fi configuration, ESP RainMaker, etc...
+《ESP32-C3物联网工程项目指导》, _IoT Guidance based on ESP32-C3_ in English, is a book written by Espressif engineers, that provides detailed guidance on IoT development, including hardware design based on ESP32-C3, ESP-IDF, Wi-Fi configuration, ESP RainMaker, etc...
 
 This repo contains the code example of builing a smart light from the book.
 
